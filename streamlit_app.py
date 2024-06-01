@@ -35,7 +35,7 @@ df_name = df_name[::-1]
 #st.write()
 st.dataframe(
 	df_name[:20],
-	width=600,
+	width=900,
 	column_config={
 		"widgets": st.column_config.Column(width="medium")
 	}
