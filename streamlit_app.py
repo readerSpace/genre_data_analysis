@@ -12,6 +12,7 @@ options = data[0]
 selected_var1 = st.selectbox("タグを選択してください：", options)
 #selected_var2 = st.selectbox("タグを選択してください：", options)
 
+
 #df_1 = df.query('var1 == ' + selected_var1)
 df_1 = df[df['var1'] == selected_var1]
 # df_1
@@ -24,7 +25,11 @@ df_name = pd.concat(
     ignore_index=True
 )
 # df_3
-df_name = df_name.query('-0.001 <= corr <= 0.001')
+corr_min = st.number_input('相関値の最小値', df_name['corr'].min())
+corr_max = st.number_input('相関値の最大値', df_name['corr'].max())
+
+df_name = df_name[df_name['corr'] >= corr_min]
+df_name = df_name[df_name['corr'] <= corr_max]
 df_name = df_name.sort_values('corr')
 df_name = df_name[::-1]
 st.write(df_name[:20])
