@@ -1,14 +1,6 @@
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
- 
-import networkx as nx
-from pyvis.network import Network
-
 import csv
 
 df = pd.read_csv('./genre_corr.csv')
