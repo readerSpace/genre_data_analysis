@@ -12,9 +12,11 @@ options = data[0]
 selected_var1 = st.selectbox("タグを選択してください：", options)
 #selected_var2 = st.selectbox("タグを選択してください：", options)
 
-df_1 = df.query('var1 == ' + selected_var1)
+#df_1 = df.query('var1 == ' + selected_var1)
+df_1 = df[df['var1'] == selected_var1]
 # df_1
-df_2 = df.query('var2 == ' + + selected_var1)
+#df_2 = df.query('var2 == ' + + selected_var1)
+df_2 = df[df['var2'] == selected_var1]
 # df_2
 df_name = pd.concat(
     [df_1, df_2],
