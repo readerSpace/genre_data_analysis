@@ -32,4 +32,10 @@ df_name = df_name[df_name['corr'] >= corr_min]
 df_name = df_name[df_name['corr'] <= corr_max]
 df_name = df_name.sort_values('corr')
 df_name = df_name[::-1]
-st.write(df_name[:20])
+#st.write()
+st.dataframe(
+	df_name[:20],
+	column_config={
+		"widgets": st.column_config.Column(width="medium")
+	}
+)
