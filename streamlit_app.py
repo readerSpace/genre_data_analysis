@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import csv
-
+import streamlit as st
 df = pd.read_csv('./genre_corr.csv')
 
 with open("genre_dataset_for_pandas.csv", encoding="utf-8") as f:
