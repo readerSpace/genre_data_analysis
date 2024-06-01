@@ -78,7 +78,6 @@ df_name['p01/p0p1(%)'] = res01
 st.dataframe(
 	df_name,
 	width=1200,
-	column_config={
-		"widgets": st.column_config.Column(width="medium")
-	}
+	use_container_width=True,
+	
 )
