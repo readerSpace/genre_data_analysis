@@ -27,4 +27,4 @@ df_name = pd.concat(
 df_name = df_name.query('-0.001 <= corr <= 0.001')
 df_name = df_name.sort_values('corr')
 df_name = df_name[::-1]
-st.write(de_name[:20])
+st.write(df_name[:20])
