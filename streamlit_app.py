@@ -7,9 +7,14 @@ df = pd.read_csv('./genre_corr.csv')
 with open("genre_dataset_for_pandas.csv", encoding="utf-8") as f:
     data = list(csv.reader(f))
 
-df_1 = df.query('var1 == "女装"')
+options = data[0]
+
+selected_var1 = st.selectbox("タグを選択してください：", options)
+#selected_var2 = st.selectbox("タグを選択してください：", options)
+
+df_1 = df.query('var1 == ' + selected_var1)
 # df_1
-df_2 = df.query('var2 == "女装"')
+df_2 = df.query('var2 == ' + + selected_var1)
 # df_2
 df_name = pd.concat(
     [df_1, df_2],
