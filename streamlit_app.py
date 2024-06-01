@@ -25,8 +25,8 @@ df_name = pd.concat(
     ignore_index=True
 )
 # df_3
-corr_min = st.number_input('相関値の最小値', df_name['corr'].min())
-corr_max = st.number_input('相関値の最大値', df_name['corr'].max())
+corr_min = st.number_input('相関値の最小値', placeholder=df_name['corr'].min())
+corr_max = st.number_input('相関値の最大値', placeholder=df_name['corr'].max())
 
 df_name = df_name[df_name['corr'] >= corr_min]
 df_name = df_name[df_name['corr'] <= corr_max]
